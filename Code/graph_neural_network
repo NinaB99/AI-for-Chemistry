@@ -233,3 +233,5 @@ wandb.finish()
 test_mse = results[0]["Test MSE"]
 test_rmse = test_mse ** 0.5
 print(f"\nMPNN model performance: RMSE on test set = {test_rmse:.4f}.\n")
+
+#need to add a featuriser to try and improve the accuracy. Currently the MSE is rubbish. Think about what else can be done to improve the output, can other datapoints be used?
