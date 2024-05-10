@@ -17,7 +17,7 @@ IPythonConsole.drawOptions.addAtomIndices = True  # adding indices for atoms
 IPythonConsole.drawOptions.addBondIndices = False  # not adding indices for bonds
 IPythonConsole.molSize = 200, 200
 # thinking about importing data
-# doesn't work ! wget https://github.com/NinaB99/AI-for-Chemistry/blob/main/11095_2013_1222_MOESM2_ESM.csv
+! wget https://raw.githubusercontent.com/NinaB99/AI-for-Chemistry/main/Data/11095_2013_1222_MOESM2_ESM.csv?token=GHSAT0AAAAAACRGNFRS4FCFIWZEN4EMBJKEZR55N2A -O data/attempt2.csv
 # Random Seeds and Reproducibility
 torch.manual_seed(0)
 torch.cuda.manual_seed(0)
