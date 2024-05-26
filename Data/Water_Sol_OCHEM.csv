@@ -2812,7 +2812,6 @@ C1=CC=C2C(C=CC=C2O)=C1,-,-,1,1_naphthol,A187,18624401,-,1,10432.3,?M/L,1.982,-lo
 BrC1=CC(C(O)=O)=C(N)C=C1,-,-,2,2_amino_5_bromobenzoic_acid,A187,18624401,-,1,842.692,?M/L,3.074,-log(M),,25.0,?C,0.163,mol/L,,,,-
 C1=CC(=CC=C1O)I,-,-,3,4_iodophenol,A187,18624401,-,1,19312.0,?M/L,1.714,-log(M),,25.74,?C,0.219,mol/L,,,,-
 OC1=C(Br)C=C(C(O)=O)C(O)=C1,-,-,4,5_bromo_2_4_dihydroxybenzoic_acid,A187,18624401,-,1,2397.22,?M/L,2.62,-log(M),,25.05,?C,0.186,mol/L,,,,-
-FC=1C(=O)NC(=O)NC1,-,-,5,5_fluorouracil,A187,18624401,-,1,>1180000.0,?M/L,-0.07188,-log(M),,25.1,?C,,-,,,,-
 O=C(NC1=CC=C(C=C1)O)C,-,-,6,Acetaminophen,A187,18624401,-,1,86329.6,?M/L,1.064,-log(M),,25.07,?C,0.244,mol/L,,,,-
 S(=O)(=O)(N)C=1SC(NC(=O)C)=NN1,-,-,7,Acetazolamide,A187,18624401,-,1,3671.3,?M/L,2.435,-log(M),,24.45,?C,0.242,mol/L,,,,-
 CC(C)NCC(O)COC1=CC=CC=C1CC=C,-,-,8,Alprenolol,A187,18624401,-,1,2321.89,?M/L,2.634,-log(M),,25.59,?C,0.16,mol/L,,,,-
@@ -2857,10 +2856,8 @@ CN1C(=O)NC(=O)C(C)(C1=O)C2=CCCCC2,-,-,47,Hexobarbital,A187,18624401,-,1,2122.94,
 S1(=O)(=O)NCNC2=C1C=C(S(=O)(N)=O)C(=C2)C(F)(F)F,-,-,48,Hydroflumethiazide,A187,18624401,-,1,1080.1,?M/L,2.967,-log(M),,24.85,?C,0.182,mol/L,,,,-
 C(C1=CC=C(C=C1)O)(=O)O,-,-,49,5_hydroxybenzoic_acid,A187,18624401,-,1,34323.2,?M/L,1.464,-log(M),,25.38,?C,0.218,mol/L,,,,-
 CC(CC1=CC=C(C=C1)C(C)C(O)=O)C,-,-,50,Ibuprofen,A187,18624401,-,1,254.455,?M/L,3.594,-log(M),,24.94,?C,0.161,mol/L,,,,-
-O=C(C1=CN2C(C)COC3=C(N4CCN(C)CC4)C(F)=CC(C1=O)=C23)O,-,-,51,levofloxacin,A187,18624401,-,1,>140000.0,?M/L,0.8539,-log(M),,25.09,?C,,-,,,,-
 CCN1C=C(C(O)=O)C(=O)C=2C=C(F)C(N3CCNC(C)C3)=C(F)C12,-,-,52,Lomefloxacin,A187,18624401,-,1,4647.0,?M/L,2.333,-log(M),,25.18,?C,0.234,mol/L,,,,-
 CN(C)C(=O)C(CCN1CCC(CC1)(C2=CC=C(C=C2)Cl)O)(C3=CC=CC=C3)C4=CC=CC=C4,-,-,53,loperamide,A187,18624401,-,1,0.08427,?M/L,7.074,-log(M),,24.88,?C,,-,,,,-
-C(C1NCCC1)(=O)O,-,-,54,l-proline,A187,18624401,-,1,>535000.0,?M/L,0.2716,-log(M),,24.95,?C,,-,,,,-
 N(C)CCCC12C3=C(C(C4=CC=CC=C14)CC2)C=CC=C3,-,-,55,Maprotiline,A187,18624401,-,1,20.3495,?M/L,4.691,-log(M),,25.03,?C,0.156,mol/L,,,,-
 CC1=CC=CC(CN2CCN(CC2)C(C3=CC=CC=C3)C4=CC=C(Cl)C=C4)=C1,-,-,56,meclizine,A187,18624401,-,1,0.322,?M/L,6.492,-log(M),,24.37,?C,,-,,,,-
 C(C1=C(NC2=C(C(=CC=C2)C)C)C=CC=C1)(=O)O,-,-,57,mefenamic_acid,A187,18624401,-,1,0.183299,?M/L,6.737,-log(M),,25.11,?C,0.154,mol/L,,,,-
@@ -2875,7 +2872,6 @@ O=C1NC(CN1N=CC2=CC=C(N(=O)=O)O2)=O,-,-,65,nitrofurantoin,A187,18624401,-,1,577.4
 CCN1C=C(C(=O)C=2C=C(C(=CC12)N3CCNCC3)F)C(=O)O,-,-,66,Norfloxacin,A187,18624401,-,1,1752.0,?M/L,2.756,-log(M),,25.17,?C,0.222,mol/L,,,,-
 N(CCC=C1C2=C(CCC3=C1C=CC=C3)C=CC=C2)C,-,-,67,nortriptiline,A187,18624401,-,1,96.1989,?M/L,4.017,-log(M),,24.92,?C,0.155,mol/L,,,,-
 CC1COC2=C(N3CCN(C)CC3)C(F)=CC4=C2N1C=C(C(O)=O)C4=O,-,-,68,Ofloxacin,A187,18624401,-,1,54262.5,?M/L,1.266,-log(M),,25.17,?C,0.209,mol/L,,,,-
-CC1CN(CC(C)N1)C2=C(F)C(F)=C3C(=C2F)N(C=C(C(O)=O)C3=O)C4CC4,-,-,69,orbifloxacin,A187,18624401,-,1,>26800.0,?M/L,1.572,-log(M),,25.09,?C,,-,,,,-
 OC1C2C(O)(C(=O)C=3C1C(O)(C4=C(C3O)C(O)=CC=C4)C)C(O)=C(C(=O)C2N(C)C)C(=O)N,-,-,70,oxytetracycline,A187,18624401,-,1,816.361,?M/L,3.088,-log(M),,25.06,?C,0.193,mol/L,,,,-
 C1(=NC=CC=2C=C(C(OC)=CC12)OC)CC3=CC(=C(C=C3)OC)OC,-,-,71,Papaverine,A187,18624401,-,1,135.773,?M/L,3.867,-log(M),,25.19,?C,0.158,mol/L,,,,-
 C12=C(C=CC=3C=CC=NC13)C=CC=N2,-,-,73,phenantroline,A187,18624401,-,1,24100.0,?M/L,1.618,-log(M),,25.02,?C,0.28,mol/L,,,,-
@@ -2886,7 +2882,6 @@ C(C1=C(C(=O)O)C=CC=C1)(=O)O,-,-,77,phthalic_acid_form_I,A187,18624401,-,1,32158.
 C(C1=C(C(=O)O)C=CC=C1)(=O)O,-,-,78,phthalic_acid_form_II,A187,18624401,-,1,24823.5,?M/L,1.605,-log(M),,24.86,?C,0.261,mol/L,,,,-
 CC(C)NCC(O)COC1=CC=CC=2NC=CC12,-,-,79,Pindolol,A187,18624401,-,1,162.89,?M/L,3.788,-log(M),,25.58,?C,0.161,mol/L,,,,-
 S1(=O)(=O)N(C)C(=C(C2=CC=CC=C12)O)C(NC3=CC=CC=N3)=O,-,-,80,Piroxicam,A187,18624401,-,1,15.7828,?M/L,4.802,-log(M),,25.03,?C,0.153,mol/L,,,,-
-NC1=CC=C(C(NCCN(CC)CC)=O)C=C1,-,-,81,Procainamide,A187,18624401,-,1,>43800.0,?M/L,1.359,-log(M),,24.87,?C,,-,,,,-
 NC1=CC=C(C(OCCN(CC)CC)=O)C=C1,-,-,82,procaine,A187,18624401,-,1,19094.0,?M/L,1.719,-log(M),,25.19,?C,0.192,mol/L,,,,-
 CC(C)NCC(O)COC1=CC=CC=2C=CC=CC12,-,-,83,Propranolol,A187,18624401,-,1,320.772,?M/L,3.494,-log(M),,25.52,?C,0.16,mol/L,,,,-
 C1(CN2CCC1CC2C(O)C3=CC=NC4=C3C=C(OC)C=C4)C=C,-,-,84,Quinine,A187,18624401,-,1,1635.1,?M/L,2.786,-log(M),,24.98,?C,0.165,mol/L,,,,-
@@ -4238,35 +4233,22 @@ CCOP(=S)(OCC)OC1=CC=C(C=C1)N(=O)=O,56-38-2,-,1311,parathion,A171,10850781,-,,-4.
 C1=CC=C(C=C1)N=C=S,103-72-0,-,-,Phenyl isothiocyanate,A1990,16328896,184,I,0.66,mmol/L,3.18,-log(M),,,-,,-,,,,-
 C=1C=2C(N=C=S)=CC=CC2C=CC1,551-06-4,-,,Naphthyl isothiocyanate,A1990,16328896,184,I,0.025,mmol/L,4.602,-log(M),,,-,,-,,,,-
 C1=CC=CC=C1CN=C=S,622-78-6,-,-,benzyl isothiocyanate,A1990,16328896,184,I,0.73,mmol/L,3.137,-log(M),,,-,,-,,,,-
-BrC1=CC=C(OC2=CC=C(Br)C=C2)C=C1,2050-47-7,-,2,"4,4'-Dibromodiphenyl ether; BDE-015",A1613,12206419,1805,2,1.3E-4 +- 2.0E-5,g/L,6.402,-log(M),,25.0,?C,,-,,,,-
-BrC1=CC=C(OC2=CC=C(Br)C=C2)C=C1,2050-47-7,-,1,"4,4'-Dibromodiphenyl ether; BDE-015",A1615,17215027,1861,1,6.57E-7,mol/L,6.182,-log(M),,25.0,?C,,-,,,,-
+BrC1=CC=C(OC2=CC=C(Br)C=C2)C=C1,2050-47-7,-,1,"4,4'-Dibromodiphenyl ether; BDE-015",A1615,17215027,1861,1,6.57e-07,mol/L,6.182,-log(M),,25.0,?C,,-,,,,-
 BrC1=CC=C(OC2=CC=C(Br)C=C2)C=C1,2050-47-7,-,1,"4,4'-Dibromodiphenyl ether; BDE-015",A2002,12785581,1254,1,0.00241,mmol/L,5.618,-log(M),,25.0,?C,,-,,,,-
-BrC1=CC(Br)=CC=C1OC2=CC=C(Br)C=C2,41318-75-6,-,3,"BDE-028; 2,4,4'-tribromodiphenyl ether",A1613,12206419,1805,2,7.0E-5 +- 1.0E-5,g/L,6.764,-log(M),,25.0,?C,,-,uncertain CASRN,,,-
-BrC1=CC(Br)=CC=C1OC2=CC=C(Br)C=C2,41318-75-6,-,2,"BDE-028; 2,4,4'-tribromodiphenyl ether",A2002,12785581,1254,1,8.21E-4,mmol/L,6.086,-log(M),,25.0,?C,,-,uncertain CASRN,,,-
+BrC1=CC(Br)=CC=C1OC2=CC=C(Br)C=C2,41318-75-6,-,2,"BDE-028; 2,4,4'-tribromodiphenyl ether",A2002,12785581,1254,1,0.000821,mmol/L,6.086,-log(M),,25.0,?C,,-,uncertain CASRN,,,-
 C1=CC(=C(C=C1Br)Br)OC2=C(C=C(C=C2)Br)Br,5436-43-1,-,9,"2,2',4,4'-Tetrabromodiphenyl ether; BDE-047",A1609,11916035,197,1,0.0109,mg/L,7.649,-log(M),,,-,,-,,,,-
 C1=CC(=C(C=C1Br)Br)OC2=C(C=C(C=C2)Br)Br,5436-43-1,-,9,"2,2',4,4'-Tetrabromodiphenyl ether; BDE-047",A1609,11916035,197,1,0.0153,mg/L,7.502,-log(M),,,-,,-,,,,-
-C1=CC(=C(C=C1Br)Br)OC2=C(C=C(C=C2)Br)Br,5436-43-1,-,4,"2,2',4,4'-Tetrabromodiphenyl ether; BDE-047",A1613,12206419,1805,2,1.5E-5 +- 2.0E-6,g/L,7.51,-log(M),,25.0,?C,,-,,,,-
-C1=CC(=C(C=C1Br)Br)OC2=C(C=C(C=C2)Br)Br,5436-43-1,-,2,"2,2',4,4'-Tetrabromodiphenyl ether; BDE-047",A1615,17215027,1861,1,3.04E-8,mol/L,7.517,-log(M),,25.0,?C,,-,,,,-
-C1=CC(=C(C=C1Br)Br)OC2=C(C=C(C=C2)Br)Br,5436-43-1,-,3,"2,2',4,4'-Tetrabromodiphenyl ether; BDE-047",A2002,12785581,1254,1,1.95E-4,mmol/L,6.71,-log(M),,25.0,?C,,-,,,,-
-BrC1=CC=C(OC2=CC=C(Br)C=C2Br)C=C1Br,189084-61-5,-,5,"BDE-066; 2,3',4,4'-tetrabromodiphenyl ether",A1613,12206419,1805,2,1.8E-5 +- 3.0E-6,g/L,7.431,-log(M),,25.0,?C,,-,uncertain CASRN,,,-
-BrC1=CC=C(OC2=CC=C(Br)C(Br)=C2)C=C1Br,93703-48-1,-,6,"BDE-077; 3,3',4,4'-tetrabromodiphenyl ether",A1613,12206419,1805,2,6.0E-6 +- 1.0E-7,g/L,7.908,-log(M),,25.0,?C,,-,uncertain CASRN,,,-
-C1=CC(=C(C=C1Br)Br)OC2=C(C(=C(C=C2)Br)Br)Br,182346-21-0,-,10,"2,2',3,4,4'-Pentabromodiphenyl ether; BDE-085",A1609,11916035,197,1,9.0E-7,mg/L,11.8,-log(M),,,-,,-,,,,-
-C1=CC(=C(C=C1Br)Br)OC2=C(C(=C(C=C2)Br)Br)Br,182346-21-0,-,7,"2,2',3,4,4'-Pentabromodiphenyl ether; BDE-085",A1613,12206419,1805,2,6.0E-6 +- 1.0E-7,g/L,7.974,-log(M),,25.0,?C,,-,,,,-
+C1=CC(=C(C=C1Br)Br)OC2=C(C=C(C=C2)Br)Br,5436-43-1,-,2,"2,2',4,4'-Tetrabromodiphenyl ether; BDE-047",A1615,17215027,1861,1,3.04e-08,mol/L,7.517,-log(M),,25.0,?C,,-,,,,-
+C1=CC(=C(C=C1Br)Br)OC2=C(C=C(C=C2)Br)Br,5436-43-1,-,3,"2,2',4,4'-Tetrabromodiphenyl ether; BDE-047",A2002,12785581,1254,1,0.000195,mmol/L,6.71,-log(M),,25.0,?C,,-,,,,-
+C1=CC(=C(C=C1Br)Br)OC2=C(C(=C(C=C2)Br)Br)Br,182346-21-0,-,10,"2,2',3,4,4'-Pentabromodiphenyl ether; BDE-085",A1609,11916035,197,1,9e-07,mg/L,11.8,-log(M),,,-,,-,,,,-
 C1=CC(=C(C=C1Br)Br)OC2=CC(=C(C=C2Br)Br)Br,60348-60-9,-,11,"2,2',4,4',5-Pentabromodiphenyl ether; BDE-099",A1609,11916035,197,1,0.0024,mg/L,8.372,-log(M),,,-,,-,,,,-
-C1=CC(=C(C=C1Br)Br)OC2=CC(=C(C=C2Br)Br)Br,60348-60-9,-,11,"2,2',4,4',5-Pentabromodiphenyl ether; BDE-099",A1609,11916035,197,1,9.0E-7,mg/L,11.8,-log(M),,,-,,-,,,,-
-C1=CC(=C(C=C1Br)Br)OC2=CC(=C(C=C2Br)Br)Br,60348-60-9,-,8,"2,2',4,4',5-Pentabromodiphenyl ether; BDE-099",A1613,12206419,1805,2,9.4E-6 +- 8.0E-7,g/L,7.779,-log(M),,25.0,?C,,-,,,,-
-C1=CC(=C(C=C1Br)Br)OC2=CC(=C(C=C2Br)Br)Br,60348-60-9,-,3,"2,2',4,4',5-Pentabromodiphenyl ether; BDE-099",A1615,17215027,1861,1,7.74E-9,mol/L,8.111,-log(M),,25.0,?C,,-,,,,-
-C1=CC(=C(C=C1Br)Br)OC2=CC(=C(C=C2Br)Br)Br,60348-60-9,-,4,"2,2',4,4',5-Pentabromodiphenyl ether; BDE-099",A2002,12785581,1254,1,6.88E-5,mmol/L,7.162,-log(M),,25.0,?C,,-,,,,-
-C1=CC(=C(C=C1Br)Br)OC2=C(C=C(C=C2Br)Br)Br,189084-64-8,-,9,"BDE-100; 2,2',4,4',6-pentabromodiphenyl ether",A1613,12206419,1805,2,4.0E-5 +- 1.0E-5,g/L,7.15,-log(M),,25.0,?C,,-,,,,-
-C1=CC(=C(C=C1Br)Br)OC2=C(C=C(C=C2Br)Br)Br,189084-64-8,-,5,"BDE-100; 2,2',4,4',6-pentabromodiphenyl ether",A2002,12785581,1254,1,9.58E-5,mmol/L,7.019,-log(M),,25.0,?C,,-,,,,-
-BrC1=C(OC2=CC=CC=C2)C(Br)=C(Br)C(Br)=C1Br,-,-,12,"BDE-116; 2,3,4,5,6-pentabromodiphenyl ether",A1609,11916035,197,1,9.0E-7,mg/L,11.8,-log(M),,,-,,-,uncertain CASRN,,,-
-BrC1=CC=C(OC2=C(Br)C=C(Br)C=C2Br)C=C1Br,189084-66-0,-,13,"BDE-119; 2,3',4,4',6-pentabromodiphenyl ether",A1609,11916035,197,1,9.0E-7,mg/L,11.8,-log(M),,,-,,-,uncertain CASRN,,,-
-C1=C(C(=CC(=C1Br)Br)Br)OC2=CC(=C(C=C2Br)Br)Br,68631-49-2,-,10,"BDE-153; 2,2',4,4',5,5'-Hexabromodiphenyl ether",A1613,12206419,1805,2,8.7E-7 +- 6.0E-8,g/L,8.869,-log(M),,25.0,?C,,-,,,,-
-C1=C(C(=CC(=C1Br)Br)Br)OC2=CC(=C(C=C2Br)Br)Br,68631-49-2,-,4,"BDE-153; 2,2',4,4',5,5'-Hexabromodiphenyl ether",A1615,17215027,1861,1,5.04E-5 +- 2.7E-6,mg/L,10.11,-log(M),,25.0,?C,,-,,,,-
-C1=C(C(=CC(=C1Br)Br)Br)OC2=CC(=C(C=C2Br)Br)Br,68631-49-2,-,6,"BDE-153; 2,2',4,4',5,5'-Hexabromodiphenyl ether",A2002,12785581,1254,1,2.59E-5,mmol/L,7.587,-log(M),,25.0,?C,,-,,,,-
-BrC1=CC(OC2=C(Br)C=C(Br)C=C2Br)=C(Br)C=C1Br,207122-15-4,-,11,"BDE-154; 2,2',4,4',5,6'-hexabromodiphenyl ether",A1613,12206419,1805,2,8.7E-7 +- 9.0E-8,g/L,8.869,-log(M),,25.0,?C,,-,uncertain CASRN,,,-
-BrC1=C(OC2=CC(Br)=C(Br)C=C2Br)C(Br)=C(Br)C(Br)=C1,207122-16-5,-,12,"BDE-183; 2,2',3,4,4',5',6-heptabromodiphenyl ether",A1613,12206419,1805,2,1.5E-6 +- 3.0E-7,g/L,8.683,-log(M),,25.0,?C,,-,uncertain CASRN,,,-
-C1(=C(C(=C(C(=C1Br)Br)Br)Br)Br)Br,87-82-1,-,1,HBB; hexabromobenzene,A1613,12206419,1805,2,3.0E-6 +- 5.0E-7,g/L,8.264,-log(M),,25.0,?C,,-,,,,-
+C1=CC(=C(C=C1Br)Br)OC2=CC(=C(C=C2Br)Br)Br,60348-60-9,-,11,"2,2',4,4',5-Pentabromodiphenyl ether; BDE-099",A1609,11916035,197,1,9e-07,mg/L,11.8,-log(M),,,-,,-,,,,-
+C1=CC(=C(C=C1Br)Br)OC2=CC(=C(C=C2Br)Br)Br,60348-60-9,-,3,"2,2',4,4',5-Pentabromodiphenyl ether; BDE-099",A1615,17215027,1861,1,7.74e-09,mol/L,8.111,-log(M),,25.0,?C,,-,,,,-
+C1=CC(=C(C=C1Br)Br)OC2=CC(=C(C=C2Br)Br)Br,60348-60-9,-,4,"2,2',4,4',5-Pentabromodiphenyl ether; BDE-099",A2002,12785581,1254,1,6.88e-05,mmol/L,7.162,-log(M),,25.0,?C,,-,,,,-
+C1=CC(=C(C=C1Br)Br)OC2=C(C=C(C=C2Br)Br)Br,189084-64-8,-,5,"BDE-100; 2,2',4,4',6-pentabromodiphenyl ether",A2002,12785581,1254,1,9.58e-05,mmol/L,7.019,-log(M),,25.0,?C,,-,,,,-
+BrC1=C(OC2=CC=CC=C2)C(Br)=C(Br)C(Br)=C1Br,-,-,12,"BDE-116; 2,3,4,5,6-pentabromodiphenyl ether",A1609,11916035,197,1,9e-07,mg/L,11.8,-log(M),,,-,,-,uncertain CASRN,,,-
+BrC1=CC=C(OC2=C(Br)C=C(Br)C=C2Br)C=C1Br,189084-66-0,-,13,"BDE-119; 2,3',4,4',6-pentabromodiphenyl ether",A1609,11916035,197,1,9e-07,mg/L,11.8,-log(M),,,-,,-,uncertain CASRN,,,-
+C1=C(C(=CC(=C1Br)Br)Br)OC2=CC(=C(C=C2Br)Br)Br,68631-49-2,-,6,"BDE-153; 2,2',4,4',5,5'-Hexabromodiphenyl ether",A2002,12785581,1254,1,2.59e-05,mmol/L,7.587,-log(M),,25.0,?C,,-,,,,-
 O=C(C1=C(C=C2C(C(CC(C)C2(C)C)(C)C)=C1)C)C,1506-02-1,-,-,"FRA-002; AHTN(tonalide,tetralide,fixolide)",A2015,-,960,1,1.25,mg/L,5.315,-log(M),,,-,,-,,RIVM,,-
 O=C(C(=CC1C(=CCCC1(C)C)C)C)C,127-51-5,-,-,FRA-021; g-methyl ionone,A2015,-,960,1,9.0,mg/L,4.36,-log(M),,,-,,-,,RIFM,,-
 O1CC(C2=C(C=C3C(C(C(C)C3(C)C)(C)C)=C2)C1)C,1222-05-5,-,-,FRA-024; HHCB (Galaxolide),A2015,-,960,1,1.75,mg/L,5.169,-log(M),,,-,,-,,RIVM,,-
@@ -4329,7 +4311,7 @@ ClC1=CC(Cl)=CC=C1N=C(SCC2=CC=C(Cl)C=C2)CN3N=CN=C3,86598-92-7,-,-,Imibenconazole,
 C1=CC(Cl)=CC=C1C(C#N)(CCCC)CN2N=CN=C2,88671-89-0,-,-,MYCLOBUTANIL,A2330,-,-,-,142.0,mg/L,3.308,-log(M),,25.0,?C,,-,,,,-
 CCOC(=O)CSC1=NC(C(C)(C)C)=NN1C(=O)N(C)C,112143-82-5,-,-,Triazamate,A2330,-,-,-,433.0,mg/L,2.861,-log(M),,25.0,?C,,-,,,,-
 FC1=CC=C2N=C(N3N=CN=C3)N(C4=CC=C(Cl)C=C4Cl)C(=O)C2=C1,136426-54-5,-,-,Fluquinconazole,A2330,-,-,-,1.0,mg/L,5.575,-log(M),,20.0,?C,,-,,,,-
-C1(=C(C(=C(C(Br)=C1Br)Br)Br)Br)Br,87-82-1,-,-,hexabromobenzene,A2330,-,-,-,1.6E-4,mg/L,9.537,-log(M),,25.0,?C,,-,,,,-
+C1(=C(C(=C(C(Br)=C1Br)Br)Br)Br)Br,87-82-1,-,-,hexabromobenzene,A2330,-,-,-,0.00016,mg/L,9.537,-log(M),,25.0,?C,,-,,,,-
 O=C(O)C1=C(C=CC=C1)Br,88-65-3,-,-,O-BROMOBENZOIC ACID,A2330,-,-,-,1860.0,mg/L,2.034,-log(M),,25.0,?C,,-,,,,-
 C1(=CC=C(Br)C=C1)Br,106-37-6,-,-,"1,4-dibromobenzene",A2330,-,-,-,20.0,mg/L,4.072,-log(M),,25.0,?C,,-,,,,-
 C1(=CC=C(C=C1)Br)C,106-38-7,-,-,p-bromotoluene,A2330,-,-,-,110.0,mg/L,3.192,-log(M),,25.0,?C,,-,,,,-
@@ -4359,7 +4341,7 @@ C1(=C(C=CC=C1)Br)Cl,694-80-4,-,-,2-BROMOCHLOROBENZENE,A2330,-,-,-,44.9,mg/L,3.63
 OCC1=CC=C(Br)C=C1,873-75-6,-,-,"Benzenemethanol, 4-bromo-",A2330,-,-,-,2200.0,mg/L,1.929,-log(M),,20.0,?C,,-,,,,-
 FC1=C(C=CC=C1)Br,1072-85-1,-,-,1-Bromo-2-fluorobenzene,A2330,-,-,-,353.0,mg/L,2.695,-log(M),,25.0,?C,,-,,,,-
 FC1=CC=CC(Br)=C1,1073-06-9,-,-,m-Bromofluorobenzene,A2330,-,-,-,378.0,mg/L,2.666,-log(M),,25.0,?C,,-,,,,-
-O(C1=C(C(=C(C(Br)=C1Br)Br)Br)Br)C2=C(C(=C(C(Br)=C2Br)Br)Br)Br,1163-19-5,-,-,Decabromodiphenyl ether,A2330,-,-,-,1.0E-4,mg/L,9.982,-log(M),,25.0,?C,,-,,,,-
+O(C1=C(C(=C(C(Br)=C1Br)Br)Br)Br)C2=C(C(=C(C(Br)=C2Br)Br)Br)Br,1163-19-5,-,-,Decabromodiphenyl ether,A2330,-,-,-,0.0001,mg/L,9.982,-log(M),,25.0,?C,,-,,,,-
 OC(=O)C1=CC(Br)=CC=C1OC(=O)C,1503-53-3,-,-,2-(Acetyloxy)-4-bromo-benzoic acid,A2330,-,-,-,667.0,mg/L,2.589,-log(M),,,-,,-,,,,-
 O=S(=O)(C1=CC(=CC=C1N)Br)O,1576-59-6,-,-,"Benzenesulfonic acid, 2-amino-5-bromo-",A2330,-,-,-,595.0,mg/L,2.627,-log(M),,22.0,?C,,-,,,,-
 OC1=C(Br)C=C(C#N)C=C1Br,1689-84-5,-,-,bromoxynil,A2330,-,-,-,130.0,mg/L,3.328,-log(M),,25.0,?C,,-,,,,-
@@ -4389,10 +4371,10 @@ OCC1=CC=CC=C1Br,18982-54-2,-,-,"Benzenemethanol, 2-bromo-",A2330,-,-,-,1300.0,mg
 OC(=O)C1=C(Cl)C=CC(Br)=C1,21739-92-4,-,-,"Benzoic acid, 5-bromo-2-chloro-",A2330,-,-,-,2630.0,mg/L,1.952,-log(M),,21.0,?C,,-,,,,-
 CC(=O)NC1=C(C)C=C(Br)C=C1,24106-05-6,-,-,2-METHYL-4-BROMOACETANILIDE,A2330,-,-,-,4000.0,mg/L,1.756,-log(M),,20.0,?C,,-,,,,-
 BrC1=CC=C(Br)C=C1,26249-12-7,-,-,DIBROMOBENZENE,A2330,-,-,-,26.4,mg/L,3.951,-log(M),,35.0,?C,,-,,,,-
-BrC1=C(C=C(C(=C1C2=C(C(=CC(=C2Br)Br)Br)Br)Br)Br)Br,27858-07-7,-,-,"1,1'-Biphenyl, ar,ar,ar,ar,ar',ar',ar',ar'-octab",A2330,-,-,-,3.5E-4,mg/L,9.351,-log(M),,25.0,?C,,-,,,,-
+BrC1=C(C=C(C(=C1C2=C(C(=CC(=C2Br)Br)Br)Br)Br)Br)Br,27858-07-7,-,-,"1,1'-Biphenyl, ar,ar,ar,ar,ar',ar',ar',ar'-octab",A2330,-,-,-,0.00035,mg/L,9.351,-log(M),,25.0,?C,,-,,,,-
 BrC1=C(C=CC=C1Br)Br,28779-08-0,-,-,TRIBROMOBENZENE,A2330,-,-,-,40.0,mg/L,3.896,-log(M),,20.0,?C,,-,,,,-
 O=C(C1=CC=C(C(=C1)Br)O)OC,29415-97-2,-,-,"Benzoic acid, 3-brom-4-hydroxy-, methyl ester",A2330,-,-,-,158.0,mg/L,3.165,-log(M),,30.0,?C,,-,,,,-
-BrC1=CC(=C(C=C1OC2=C(C=C(C=C2)Br)Br)Br)Br,32534-81-9,-,-,DE 71,A2330,-,-,-,9.0E-7,mg/L,11.8,-log(M),,20.0,?C,,-,,,,-
+BrC1=CC(=C(C=C1OC2=C(C=C(C=C2)Br)Br)Br)Br,32534-81-9,-,-,DE 71,A2330,-,-,-,9e-07,mg/L,11.8,-log(M),,20.0,?C,,-,,,,-
 O=C(O)C=CC1=CC=CC(Br)=C1,32862-97-8,-,-,M-BROMOCINNAMIC ACID,A2330,-,-,-,525.0,mg/L,2.636,-log(M),,25.0,?C,,-,,,,-
 OC(=O)C1=C(C(=O)O)C(C(=O)O)=CC(Br)=C1,34163-34-3,-,-,"1,2,3-Benzenetricarboxylic acid, 5-bromo-",A2330,-,-,-,10300.0,mg/L,1.448,-log(M),,23.0,?C,,-,,,,-
 BrC1=CC(Br)=C(C(Br)=C1)C2=C(Br)C=C(Br)C=C2Br,36355-01-8,-,-,HEXABROMOBIPHENYL,A2330,-,-,-,0.011,mg/L,7.756,-log(M),,25.0,?C,,-,,,,-
@@ -4404,7 +4386,7 @@ BrC1=CC=C(S(=O)(=O)CC(=O)OC)C=C1,50397-65-4,-,-,"ACETIC ACID, [(4-BROMOPHENYL)SU
 N(=O)(=O)NC1=C(C=CC=C1Br)Br,54381-71-4,-,-,"Benzenamine, 2,6-dibromo-N-nitro-",A2330,-,-,-,715.0,mg/L,2.617,-log(M),,12.0,?C,,-,,,,-
 O=S(=O)(C1=C(C=C(C(=C1Br)N)Br)Br)O,58585-89-0,-,-,"Benzenesulfonic acid, 3-amino-2,4,6-tribromo-",A2330,-,-,-,133000.0,mg/L,0.4888,-log(M),,22.0,?C,,-,,,,-
 C(F)(F)(F)C1=CC(N(=O)=O)=CC(N(=O)=O)=C1N(C)C2=C(Br)C=C(Br)C=C2Br,63333-35-7,-,-,BROMETHALIN,A2330,-,-,-,0.01,mg/L,7.762,-log(M),,,-,,-,,,,-
-BrC1=CC(=C(C=C1C2=C(C=CC(=C2)Br)Br)Br)Br,67888-96-4,-,-,"2,2',4,5,5'-PENTABROMOBIPHENYL",A2330,-,-,-,1.03E-4,mg/L,9.726,-log(M),,25.0,?C,,-,,,,-
+BrC1=CC(=C(C=C1C2=C(C=CC(=C2)Br)Br)Br)Br,67888-96-4,-,-,"2,2',4,5,5'-PENTABROMOBIPHENYL",A2330,-,-,-,0.000103,mg/L,9.726,-log(M),,25.0,?C,,-,,,,-
 O=CC1=C(Br)C=CC(Br)=C1,74553-29-0,-,-,"2,5-Dibromobenzaldehyde",A2330,-,-,-,41.8,mg/L,3.8,-log(M),,25.0,?C,,-,,,,-
 OS(=O)(=O)C1=C(Br)C(Br)=C(Br)C(Br)=C1Br,98137-88-3,-,-,"Benzenesulfonic acid, pentabromo-",A2330,-,-,-,5450.0,mg/L,2.006,-log(M),,10.0,?C,,-,,,,-
 BrC1=CC=C(C2=CC=C(C3CC(C=4C(C3)=CC=CC4)C=5C(=O)C=6C(SC5O)=CC=CC6)C=C2)C=C1,104653-34-1,-,-,Difethialone,A2330,-,-,-,0.39,mg/L,6.141,-log(M),,25.0,?C,,-,,,,-
@@ -4499,7 +4481,7 @@ FC(F)(Cl)C,75-68-3,-,-,"1-CHLORO-1,1-DIFLUOROETHANE",A2936,-,-,-,1400.0,mg/L,1.8
 FC(F)(C(Cl)(Cl)Cl)Cl,76-11-9,-,-,"1,1,1,2-TETRACHLORO-2,2-DIFLUOROETHANE",A3517,-,-,-,100.0,mg/L,3.309,-log(M),,25.0,?C,,-,,,,-
 OC1=CC=C(C=C1)C(C2=CC=C(O)C=C2)(C)C,80-05-7,-,-,diphenylolpropane,A3512,-,-,-,120.0,mg/L,3.279,-log(M),,25.0,?C,,-,,,,-
 S=P(OC)(OC)SCN1N=NC2=CC=CC=C2C1=O,86-50-0,-,-,methyl azinphos,A3493,-,-,-,20.9,mg/L,4.181,-log(M),,20.0,?C,,-,,,,-
-C1(=C(C(=C(C(Br)=C1Br)Br)Br)Br)Br,87-82-1,-,-,hexabromobenzene,A3501,-,-,-,1.6E-4,mg/L,9.537,-log(M),,25.0,?C,,-,,,,-
+C1(=C(C(=C(C(Br)=C1Br)Br)Br)Br)Br,87-82-1,-,-,hexabromobenzene,A3501,-,-,-,0.00016,mg/L,9.537,-log(M),,25.0,?C,,-,,,,-
 O=C(O)C1=C(C=CC=C1)Br,88-65-3,-,-,O-BROMOBENZOIC ACID,A3487,-,-,-,1860.0,mg/L,2.034,-log(M),,25.0,?C,,-,,,,-
 FC(F)(F)C1=CC=CC(N)=C1,98-16-8,-,-,3-trifluoromethylaniline,A3490,-,-,-,5460.0,mg/L,1.47,-log(M),,25.0,?C,,-,,,,-
 O=CC=CC1=CC=CC=C1,104-55-2,-,-,3-Phenyl-2-propenal,A3511,-,-,-,1420.0,mg/L,1.969,-log(M),,25.0,?C,,-,,,,-
