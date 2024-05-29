@@ -1,4 +1,4 @@
-No,Name,Updated SMILES,%F,logK(%F),Category,Source,MolW(Da),NumHAcceptors,NumHDonors,LogP,Lipinski_rule
+No,Name,SMILES,%F,logK(%F),Category,Source,MolW(Da),NumHAcceptors,NumHDonors,LogP,Lipinski_rule
 1,3-Ketodesogestrel,C#CC1(O)CCC2C3CCC4=CC(=O)CCC4C3C(=C)CC21CC,76.0,0.500602351,1,"5,8,13,14,16",324.4640000000001,2,1,4.048700000000004,1
 2,Abacavir,Nc1nc(NC2CC2)c2ncn(C3C=CC(CO)C3)c2n1,83.0,0.688629171,1,"3,5,8,12,13,14,16",286.33900000000006,7,3,1.0922999999999998,1
 3,Abecarnil,COCc1c(C(=O)OC(C)C)[nH]cc2nc3ccc(OCc4ccccc4)cc3c1-2,92.0,1.06069784,1,"15,16",404.4660000000002,5,1,4.958300000000005,1
