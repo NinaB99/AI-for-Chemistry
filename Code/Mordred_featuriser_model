@@ -1,0 +1,338 @@
+! pip install chemprop
+import random
+import numpy as np
+import pandas as pd
+! pip install pytorch-lightning wandb rdkit ogb deepchem
+import torch
+VERSION = torch.__version__
+! pip install pyg_lib torch_scatter torch_sparse -f https://data.pyg.org/whl/torch-{VERSION}.html
+! pip install torch-geometric
+! mkdir data/
+from rdkit.Chem import MolFromSmiles
+from rdkit.Chem.Draw import IPythonConsole
+from rdkit.Chem import Draw
+IPythonConsole.ipython_useSVG = True  # < use SVGs instead of PNGs
+IPythonConsole.drawOptions.addAtomIndices = True  # adding indices for atoms
+IPythonConsole.drawOptions.addBondIndices = False  # not adding indices for bonds
+IPythonConsole.molSize = 200, 200
+# thinking about importing data
+#! wget https://raw.githubusercontent.com/NinaB99/AI-for-Chemistry/main/Data/CuratedSol.csv
+# Random Seeds and Reproducibility
+torch.manual_seed(0)
+torch.cuda.manual_seed(0)
+np.random.seed(0)
+random.seed(0)
+! pip install deepchem.data
+import torch.nn.functional as F
+from torch.nn import GRU
+import pytorch_lightning as pl
+from pytorch_lightning.loggers import WandbLogger
+from torch_geometric.loader import DataLoader
+from torch_geometric.nn import NNConv, MLP, global_add_pool
+from ogb.graphproppred.mol_encoder import AtomEncoder, BondEncoder
+from tqdm import tqdm
+import pandas as pd
+import torch
+from torch_geometric.data import (
+    Data,
+    InMemoryDataset,
+    download_url,
+)
+from ogb.utils import smiles2graph
+from deepchem.splits import RandomSplitter
+import torch.nn as nn
+import torch.nn.functional as F
+from torch_geometric.nn import GCNConv, global_add_pool
+from deepchem.feat import RDKitDescriptors
+from sklearn.feature_selection import VarianceThreshold
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.ensemble import RandomForestRegressor
+from xgboost import XGBRegressor
+from sklearn.metrics import mean_squared_error
+from sklearn.model_selection import GridSearchCV
+import wandb
+
+df = pd.read_csv('https://raw.githubusercontent.com/NinaB99/AI-for-Chemistry/main/Data/Bioavailibility.csv')
+smiles = df['SMILES'].values.tolist()
+category = df['Category'].values.tolist()
+# Here, we use molecular descriptors from RDKit, like molecular weight, number of valence electrons, maximum and minimum partial charge, etc.
+featurizer = RDKitDescriptors()
+features = featurizer.featurize(smiles)
+print(f"Number of generated molecular descriptors: {features.shape[1]}")
+
+# Drop the features containing invalid values
+features = features[:, ~np.isnan(features).any(axis=0)]
+print(f"Number of molecular descriptors without invalid values: {features.shape[1]}")
+y = df['logK(%F)'].values
+# Here, we removed all zero-variance features, i.e. features that have the same value in all samples.
+
+selector = VarianceThreshold(threshold=0.0)
+features = selector.fit_transform(features)
+print(f"Number of molecular descriptors after removing zero-variance features: {features.shape[1]}")
+#df_features = pd.DataFrame(features)
+
+splitter = RandomSplitter()
+molecular_features = torch.tensor(features, dtype=torch.float32)
+# train_idx, valid_idx, test_idx = splitter.split(molecular_features, frac_train=0.7, frac_valid=0.1, frac_test=0.2)
+# train_dataset_features = molecular_features[train_idx]
+# valid_dataset_features = molecular_features[valid_idx]
+# test_dataset_features = molecular_features[test_idx]
+
+#print(f"Train dataset shape: {train_dataset_features.shape}")
+#print(f"Valid dataset shape: {valid_dataset_features.shape}")
+#print(f"Test dataset shape: {test_dataset_features.shape}")
+
+# Normalize target to mean = 0 and std = 1.
+mean = y.mean()
+std = y.std()
+y = (y - mean) / std
+
+### Mordred specific code: ###
+!pip install mordred
+from mordred import Calculator, descriptors
+
+# Mordred featuriser
+calc = Calculator(descriptors, ignore_3D=True)
+mols = [MolFromSmiles(smi) for smi in smiles]
+Mordred_features_df =  calc.pandas(mols)
+Mordred_features = Mordred_features_df.to_numpy()
+print(type(Mordred_features))
+Mordred_features = Mordred_features.astype(float)
+Mordred_features = Mordred_features[:, ~pd.isnull(Mordred_features).any(axis=0)]
+print(f"Number of molecular descriptors without invalid values: {Mordred_features.shape[1]}")
+
+Mordred_features = selector.fit_transform(Mordred_features)
+print(f"Number of molecular descriptors after removing zero-variance features: {Mordred_features.shape[1]}")
+print(Mordred_features[0,:])
+Mordred_molecular_features = torch.tensor(Mordred_features, dtype=torch.float32)
+
+class FeaturesNeuralNetwork(pl.LightningModule):
+    def __init__(self, input_sz, hidden_sz, output_sz, 
+                 train_data, valid_data, test_data,
+                 batch_size=254, dropout = 0.2, lr=1e-3, dropout_prob = 0.5):
+        super().__init__()
+        self.lr = lr
+        self.input_sz = input_sz
+        self.hidden_sz = hidden_sz
+        self.out_sz = output_sz
+        self.train_data = train_data
+        self.valid_data = valid_data
+        self.test_data = test_data
+        self.batch_size = batch_size
+        self.dropout = dropout_prob
+        self.loss = nn.MSELoss()
+        self.dropout_prob = dropout_prob
+        
+    # def forward(self, data, mode = "train"):
+        # Define all the components
+        self.model = nn.Sequential(nn.Linear(input_sz, hidden_sz),
+            nn.Sigmoid(),
+            nn.Dropout(p=dropout),
+            nn.Linear(hidden_sz, hidden_sz),
+            nn.Sigmoid(),
+            nn.Dropout(p=dropout),
+            nn.Linear(hidden_sz, 1),
+            nn.Sigmoid(),
+            nn.Dropout(p=dropout))
+        # layers = []
+        # previous_dim = input_sz
+        # hidden_dim = [hidden_sz, hidden_sz, hidden_sz]
+        # for hidden_dim in hidden_dim:
+        #     layers.append(nn.Linear(previous_dim, hidden_dim))
+        #     layers.append(nn.Tanh())
+        #     layers.append(nn.Dropout(self.dropout))
+        # layers.append(nn.Linear(previous_dim, output_sz))
+        # self.model = nn.Sequential(*layers) 
+        # # self.activation = nn.Tanh()
+
+    def forward(self, x):
+        return self.model(x)
+
+        
+    def training_step(self, batch, batch_idx):
+        # Here we define the train loop.
+        x, y = batch
+        z = self.model(x)
+        loss = F.mse_loss(z, y)
+        self.log("Train loss", loss)
+        # print("end training step")
+        return loss
+    
+    def validation_step(self, batch, batch_idx):
+        # Define validation step. At the end of every epoch, this will be executed
+        # print(batch)
+        x, y = batch
+        # print('x')
+        # print(x.shape)
+        # print('y')
+        # print(y.shape)
+        z = self.model(x)
+        # print('z')
+        # print(z.shape)
+        loss = F.mse_loss(z, y)  # report MSE
+        self.log("Valid MSE", loss)
+        
+    def test_step(self, batch, batch_idx):
+        # What to do in test
+        x, y = batch
+        z = self.model(x)
+        loss = F.mse_loss(z, y)  # report MSE
+        self.log("Test MSE", loss)
+
+    def configure_optimizers(self):
+        # Here we configure the optimization algorithm.
+        optimizer = torch.optim.Adam(
+            self.parameters(),
+            lr=self.lr
+        )
+        return optimizer
+    
+    # def forward(self, x):
+    #     # Here we define what the NN does with its parts
+    #     return self.model(x).flatten()
+    
+    def train_dataloader(self):
+        return DataLoader(self.train_data, batch_size=self.batch_size, shuffle=True)
+    
+    def val_dataloader(self):
+        return DataLoader(self.valid_data, batch_size=self.batch_size, shuffle=False)
+    
+    def test_dataloader(self):
+        return DataLoader(self.test_data, batch_size=self.batch_size, shuffle=False)
+from torch.utils.data import Dataset
+
+#Creating features dataset
+class Features_dataset(Dataset):
+    def __init__(self, X, y):
+        self.X = X
+        self.y = y
+
+    def __len__(self):
+        return self.X.shape[0]
+
+    def __getitem__(self, idx):
+        
+        if torch.is_tensor(idx):
+            idx = idx.tolist()
+        # X_ = torch.as_tensor(self.X[idx].astype(np.float32))
+        X_ = self.X[idx]
+        # y_ = torch.as_tensor(self.y[idx].astype(np.float32).reshape(-1))
+        y_ = self.y[idx]
+
+        return X_, y_
+
+from sklearn.preprocessing import MinMaxScaler
+
+# Processing data for inputs
+
+Formatted_dataset = Features_dataset(Mordred_features,y)
+#train_data = ESOLDataset(X_train, y_train)
+#valid_data = ESOLDataset(X_valid, y_valid)
+scaler = MinMaxScaler()
+# save original X
+# X_train_ori = X_train
+# X_test_ori = X_test
+# transform data
+#test_data = ESOLDataset(X_test, y_test)
+#molecular_features_tensor = torch.tensor(Formatted_dataset, dtype=torch.float32)
+train_idx_NN, valid_idx_NN, test_idx_NN = splitter.split(Formatted_dataset, frac_train=0.7, frac_valid=0.1, frac_test=0.2)
+train_dataset_features_NN_x = Mordred_molecular_features[train_idx_NN]
+scaler.fit(train_dataset_features_NN_x)
+train_dataset_features_NN_x = scaler.transform(train_dataset_features_NN_x)
+train_dataset_features_NN_x = torch.tensor(train_dataset_features_NN_x, dtype=torch.float32)
+train_y_NN = y[train_idx_NN]
+train_dataset_features_NN = Features_dataset(train_dataset_features_NN_x,train_y_NN)
+
+valid_dataset_features_NN_x = Mordred_molecular_features[valid_idx_NN]
+valid_y_NN = y[valid_idx_NN]
+valid_dataset_features_NN = Features_dataset(valid_dataset_features_NN_x,valid_y_NN)
+
+test_dataset_features_NN_x = Mordred_molecular_features[test_idx_NN]
+test_dataset_features_NN_x = scaler.transform(test_dataset_features_NN_x)
+test_dataset_features_NN_x = torch.tensor(test_dataset_features_NN_x, dtype=torch.float32)
+test_y_NN = y[test_idx_NN]
+test_dataset_features_NN = Features_dataset(test_dataset_features_NN_x,test_y_NN)
+
+# This will ask you to login to your wandb account
+
+wandb.init(project="nn-bioavailibility",
+           config={
+               "batch_size": 24,
+               "learning_rate": 0.01,
+               "hidden_size": 200,
+               "max_epochs": 500
+           })
+# Here we create an instance of our neural network.
+# Play around with the hyperparameters!
+features_nn_model = FeaturesNeuralNetwork(
+    input_sz = train_dataset_features_NN.X.shape[1],
+    hidden_sz = wandb.config["hidden_size"],
+    output_sz = 1,
+    train_data = train_dataset_features_NN,
+    valid_data = valid_dataset_features_NN,
+    test_data = test_dataset_features_NN,
+    lr = wandb.config["learning_rate"],
+    batch_size=wandb.config["batch_size"],
+    dropout_prob = 0.8 # very aggressive to try and stop overfitting
+)
+
+# Define trainer: How we want to train the model
+wandb_logger = WandbLogger()
+trainer = pl.Trainer(
+    max_epochs = wandb.config["max_epochs"],
+    logger = wandb_logger
+)
+
+# Finally! Training a model :)
+trainer.fit(
+    model=features_nn_model,
+)
+
+# Now run test
+results = trainer.test(ckpt_path="best")
+wandb.finish()
+torch.save(features_nn_model.state_dict(), 'Mordred_featuriser_nn_model.pth')
+
+features_nn_model.load_state_dict(torch.load('Mordred_featuriser_nn_model2.pth'))
+# set the models to evaluate mode
+features_nn_model.eval()
+# Perform the forward pass to get predictions
+with torch.no_grad():
+    test_predictions_tensor_features = features_nn_model(molecular_features)
+
+# Convert predictions back to NumPy array
+features_predictions = test_predictions_tensor_features.numpy().flatten()
+
+outputs_df = pd.DataFrame([features_predictions,
+                          category])
+outputs_df = outputs_df.transpose()
+outputs_df = outputs_df.reset_index(drop=True)
+count_total = len(outputs_df[0])
+
+features_count_correct = 0
+for i in range(count_total):
+    if outputs_df[0][i] > 0.5 and outputs_df[1][i] == 1:
+        features_count_correct += 1
+    elif outputs_df[0][i] < 0.5 and outputs_df[1][i] == 0:
+        features_count_correct += 1
+print(features_count_correct/count_total)
+#features_predictions = FeaturesNeuralNetwork.predict(molecular_features, verbose=0)
+features_NN_TP = ((outputs_df[0] > 0.5) & (outputs_df[1] == 1)).sum()
+# print(features_NN_TP)
+features_NN_FN = ((outputs_df[0] < 0.5) & (outputs_df[1] == 1)).sum()
+# print(features_NN_FN)
+features_NN_TN = ((outputs_df[0] < 0.5) & (outputs_df[1] == 0)).sum()
+# print(features_NN_TN)
+features_NN_FP = ((outputs_df[0] > 0.5) & (outputs_df[1] == 0)).sum()
+# print(features_NN_FP)
+features_NN_sensitivity = features_NN_TP/(features_NN_TP+features_NN_FN)
+print(f"Sensitivity of featuriser neural network: {features_NN_sensitivity}")
+
+features_NN_specificity = features_NN_TN/(features_NN_TN+features_NN_FP)
+print(f"Specificity of featuriser neural network: {features_NN_specificity}")
+
+features_NN_CCR = ((features_NN_sensitivity+features_NN_specificity)/2)*100
+print(f"Correct classfication rate of featuriser neural network: {features_NN_CCR}")
+
+print(outputs_df)
