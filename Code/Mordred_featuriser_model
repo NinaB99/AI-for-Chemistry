@@ -245,6 +245,8 @@ train_y_NN = y[train_idx_NN]
 train_dataset_features_NN = Features_dataset(train_dataset_features_NN_x,train_y_NN)
 
 valid_dataset_features_NN_x = Mordred_molecular_features[valid_idx_NN]
+valid_dataset_features_NN_x = scaler.transform(valid_dataset_features_NN_x)
+valid_dataset_features_NN_x = torch.tensor(valid_dataset_features_NN_x, dtype=torch.float32)
 valid_y_NN = y[valid_idx_NN]
 valid_dataset_features_NN = Features_dataset(valid_dataset_features_NN_x,valid_y_NN)
 
