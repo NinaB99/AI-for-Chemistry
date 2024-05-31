@@ -10,13 +10,13 @@ The required packages are listed in requirements.txt
 
 ## Data
 - Bioavailibility:
-- Aqueous solubility: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/OVHAW8
-
-                      https://pubs.acs.org/doi/10.1021/acs.jcim.3c00160
-
-                      https://pubs.acs.org/doi/10.1021/ci034243x
-
-                      https://ochem.eu/properties/show.do
+  - https://pubmed.ncbi.nlm.nih.gov/24306326/
+  - https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00580-6
+- Aqueous solubility:
+  - https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/OVHAW8
+  - https://pubs.acs.org/doi/10.1021/acs.jcim.3c00160
+  - https://pubs.acs.org/doi/10.1021/ci034243x
+  - https://ochem.eu/properties/show.do
 
   
 
