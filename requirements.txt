@@ -19,3 +19,4 @@ torch-sparse
 pyg_lib
 tqdm
 chemprop
+mordred
