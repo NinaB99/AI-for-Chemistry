@@ -6,6 +6,6 @@ Data Sources:
 
 
 
-Authors:  https://github.com/NinaB99
-          https://github.com/jcbelow
+Authors:  https://github.com/NinaB99\n
+          https://github.com/jcbelow\n
           https://github.com/MGalka66
