@@ -9,14 +9,14 @@ The data files are in the Data folder.
 The required packages are listed in requirements.txt
 
 ## Data
-Bioavailibility:
-Aqueous solubility: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/OVHAW8
+- Bioavailibility:
+- Aqueous solubility: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/OVHAW8
 
 
 ## 📖 Authors
-Nina Belusa: https://github.com/NinaB99
-Jonathan Below: https://github.com/jcbelow
-Matthias Galka: https://github.com/MGalka66
+- Nina Belusa: https://github.com/NinaB99
+- Jonathan Below: https://github.com/jcbelow
+- Matthias Galka: https://github.com/MGalka66
 
 This project was carried out as part of EPFL's "AI for Chemistry" course.
 
