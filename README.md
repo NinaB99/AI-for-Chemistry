@@ -1,2 +1,11 @@
-# AI-for-Chemistry
-AI project to predict the oral bioavalibilty of drug compounds before clinical trials
+# Oral bioavailibility prediction using mashine learning
+
+
+
+Data Sources: 
+
+
+
+Authors:  https://github.com/NinaB99
+          https://github.com/jcbelow
+          https://github.com/MGalka66
